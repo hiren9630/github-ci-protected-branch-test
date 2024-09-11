@@ -19,7 +19,7 @@ jobs:
       run:
         working-directory: './example-app'
     steps:
-      - run: echo "pwd: $(pwd)"
+      - run: echo "pwd $(pwd)"
       - name: Checkout
         uses: actions/checkout@v4
       - uses: actions/setup-node@v3
