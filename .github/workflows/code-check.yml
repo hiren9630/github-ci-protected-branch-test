@@ -22,6 +22,5 @@ jobs:
         uses: biomejs/setup-biome@v2
         with:
           version: 1.8.3
-          working-dir: './example-app/'
       - name: Run Biome
-        run: biome ci './example-app/'
+        run: biome ci --config-path './example-app/biome.jsonc' './example-app/'
