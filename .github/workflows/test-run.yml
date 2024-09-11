@@ -17,7 +17,7 @@ jobs:
     runs-on: self-hosted
     defaults:
       run:
-        working-directory: './example-app/'
+        working-directory: './example-app'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
