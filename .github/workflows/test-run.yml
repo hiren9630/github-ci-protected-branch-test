@@ -19,9 +19,11 @@ jobs:
       run:
         working-directory: './example-app'
     steps:
-      - run: echo "pwd $(pwd)"
       - name: Checkout
         uses: actions/checkout@v4
+      - run: echo "pwd $(pwd)"
+      - run: echo "ls $(ls ./package-lock.json)"
+      - run: echo "ls $(ls package-lock.json)"
       - uses: actions/setup-node@v3
         with:
           node-version: 18
