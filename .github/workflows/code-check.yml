@@ -24,4 +24,4 @@ jobs:
           version: 1.8.3
 #          working-dir: 'example-app/'
       - name: Run Biome
-        run: biome ci 'example-app/'
+        run: biome ci './example-app/'
