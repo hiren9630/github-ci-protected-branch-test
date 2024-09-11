@@ -2,15 +2,7 @@ name: Code quality
 
 on:
   push:
-    branches: [main]
-    paths:
-      - 'example-app/**'
-      - '!**.md'
   pull_request:
-    branches: [main]
-    paths:
-      - 'example-app/**'
-      - '!**.md'
 
 jobs:
   quality:
@@ -21,7 +13,6 @@ jobs:
       - name: Setup Biome
         uses: biomejs/setup-biome@v2
         with:
-          version: 1.8.3
-          working-dir: "example-app"
+          version: latest
       - name: Run Biome
         run: biome ci .
