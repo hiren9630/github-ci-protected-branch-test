@@ -1,4 +1,4 @@
-name: Jest Test
+name: Run Test with Jest
 
 on:
   push:
@@ -13,19 +13,18 @@ on:
       - '!**.md'
 
 jobs:
-  quality:
+  build:
     runs-on: self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 18
           cache: npm
       - run: npm i -g npm@9.6.7
       - run: |
-          echo "node: $(node --version)"
-          echo "npm: $(npm --version)"
+          echo "pwd: $(pwd)"
       - run: npm ci
       - name: Run Test
         run: npm run test
