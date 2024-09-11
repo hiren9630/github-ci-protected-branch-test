@@ -22,13 +22,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - run: echo "pwd $(pwd)"
-      - run: echo "ls $(ls ./package-lock.json)"
-      - run: echo "ls $(ls package-lock.json)"
+      - run: echo "ls $(ls -la ./package-lock.json)"
+      - run: echo "ls $(ls -la package-lock.json)"
       - uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: npm
-          cache-dependency-path: 'package-lock.json'
+          cache-dependency-path: './example-app/package-lock.json'
       - run: npm ci
       - name: Run Test
         run: npm run test
