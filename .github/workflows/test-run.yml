@@ -19,13 +19,14 @@ jobs:
       run:
         working-directory: './example-app'
     steps:
+      - run: echo "pwd: $(pwd)"
       - name: Checkout
         uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: npm
-          cache-dependency-path: './package-lock.json'
+          cache-dependency-path: 'package-lock.json'
       - run: npm ci
       - name: Run Test
         run: npm run test
