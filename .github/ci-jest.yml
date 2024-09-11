@@ -1,4 +1,4 @@
-name: Code quality
+name: Jest Test
 
 on:
   push:
