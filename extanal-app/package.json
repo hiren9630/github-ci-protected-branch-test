@@ -8,6 +8,8 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
+    "check": "npx @biomejs/biome check --write .",
+    "check:ci": "npx @biomejs/biome ci .",
     "cdk": "cdk"
   },
   "devDependencies": {
