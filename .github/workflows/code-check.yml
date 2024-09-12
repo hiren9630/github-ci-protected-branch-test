@@ -23,4 +23,4 @@ jobs:
         with:
           version: 1.8.3
       - name: Run Biome
-        run: biome ci --config-path './example-app/biome.jsonc' './example-app/'
+        run: biome ci --config-path 'example-app/biome.jsonc' 'example-app/'
