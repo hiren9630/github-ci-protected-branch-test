@@ -12,6 +12,5 @@ export class ExtanalAppStack extends cdk.Stack {
     const queue = new sqs.Queue(this, 'ExtanalAppQueue', {
       visibilityTimeout: cdk.Duration.seconds(300),
     });
-    queue.queueName; // get the name of the queue
   }
 }
