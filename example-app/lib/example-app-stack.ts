@@ -12,6 +12,5 @@ export class ExampleAppStack extends cdk.Stack {
     const queue = new sqs.Queue(this, 'ExampleAppQueue', {
       visibilityTimeout: cdk.Duration.seconds(300),
     });
-    queue.queueName; // get the name of the queue
   }
 }
