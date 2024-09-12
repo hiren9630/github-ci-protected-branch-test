@@ -26,8 +26,8 @@ jobs:
         with:
           node-version: 18
           cache: npm
-          cache-dependency-path: 'example-app/package-lock.json' #working-directoryを指定してても、ディレクトリは反映されないので、GHAのデフォルトカレントディレクトリからのPathを指定する
-      - name: Clean Install npm
+          cache-dependency-path: 'example-app/package-lock.json' #working-directoryを指定しても、ディレクトリは反映されないので、GHAのデフォルトカレントディレクトリからのPathを指定する
+      - name: Clean Install Dependencies
         run: npm ci
       - name: Run Test
         run: npm run test
