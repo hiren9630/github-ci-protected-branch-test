@@ -1,63 +1,62 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
-	"files": {
-	  "ignore": ["node_modules/*", "cdk.out/*"]
-	},
-	"formatter": {
-	  "ignore": ["*.js", "tsconfig.json", "cdk.json", "*.snap"],
-	  "indentStyle": "space",
-	  "indentWidth": 2,
-	  "lineWidth": 150
-	},
-	"javascript": {
-	  "formatter": {
-		"quoteStyle": "single",
-		"semicolons": "always"
-	  }
-	},
-	"linter": {
-	  // "ignore": [],
-	  "rules": {
-		"correctness": {
-		  "noUndeclaredVariables": "error",
-		  "noUnusedVariables": "error"
-		},
-		"style": {
-		  "noNamespace": "error",
-		  "useImportType": "off", // Biome推奨だが、あまり見かけない形のため無効化
-		  "useNamingConvention": {
-			"level": "error",
-			"options": {
-			  "strictCase": false,
-			  "conventions": [
-				{ "selector": { "kind": "class" }, "formats": ["PascalCase"] },
-				{ "selector": { "kind": "classMethod" }, "formats": ["camelCase"] },
-				{ "selector": { "kind": "typeMethod" }, "formats": ["camelCase"] },
-				{ "selector": { "kind": "objectLiteralMethod" }, "formats": ["camelCase"] },
-				{ "selector": { "kind": "function" }, "formats": ["camelCase"] },
-				{ "selector": { "kind": "interface" }, "formats": ["PascalCase"] },
-				{ "selector": { "kind": "enum" }, "formats": ["PascalCase"] },
-				{ "selector": { "kind": "enumMember" }, "formats": ["CONSTANT_CASE"] },
-				{ "selector": { "kind": "objectLiteralProperty" }, "formats": ["camelCase", "PascalCase", "CONSTANT_CASE"] },
-				{ "selector": { "kind": "importAlias" }, "formats": ["camelCase", "PascalCase", "snake_case", "CONSTANT_CASE"] }
-			  ]
-			}
-		  }
-		},
-		"suspicious": {
-		  "noEmptyBlockStatements": "error",
-		  "noSkippedTests": "warn"
-		}
-	  }
-	},
-	// テストコードに含まれるJest関数が no undeclared variables と判定されるため、テストファイルのみ設定を上書き
-	"overrides": [
-	  {
-		"include": ["*.test.ts", "*.test.tsx", "*.spec.ts", "*.spec.tsx", "**/__tests__/**"],
-		"javascript": {
-		  "globals": ["afterAll", "afterEach", "beforeAll", "beforeEach", "describe", "expect", "it", "jest", "test"]
-		}
-	  }
-	]
-  }
-  
+  "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+  "files": {
+    "ignore": ["node_modules/*", "cdk.out/*"]
+  },
+  "formatter": {
+    "ignore": ["*.js", "tsconfig.json", "cdk.json", "*.snap"],
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 150
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "always"
+    }
+  },
+  "linter": {
+    // "ignore": [],
+    "rules": {
+      "correctness": {
+        "noUndeclaredVariables": "error",
+        "noUnusedVariables": "error"
+      },
+      "style": {
+        "noNamespace": "error",
+        "useImportType": "off", // Biome推奨だが、あまり見かけない形のため無効化
+        "useNamingConvention": {
+          "level": "error",
+          "options": {
+            "strictCase": false,
+            "conventions": [
+              { "selector": { "kind": "class" }, "formats": ["PascalCase"] },
+              { "selector": { "kind": "classMethod" }, "formats": ["camelCase"] },
+              { "selector": { "kind": "typeMethod" }, "formats": ["camelCase"] },
+              { "selector": { "kind": "objectLiteralMethod" }, "formats": ["camelCase"] },
+              { "selector": { "kind": "function" }, "formats": ["camelCase"] },
+              { "selector": { "kind": "interface" }, "formats": ["PascalCase"] },
+              { "selector": { "kind": "enum" }, "formats": ["PascalCase"] },
+              { "selector": { "kind": "enumMember" }, "formats": ["CONSTANT_CASE"] },
+              { "selector": { "kind": "objectLiteralProperty" }, "formats": ["camelCase", "PascalCase", "CONSTANT_CASE"] },
+              { "selector": { "kind": "importAlias" }, "formats": ["camelCase", "PascalCase", "snake_case", "CONSTANT_CASE"] }
+            ]
+          }
+        }
+      },
+      "suspicious": {
+        "noEmptyBlockStatements": "error",
+        "noSkippedTests": "warn"
+      }
+    }
+  },
+  // テストコードに含まれるJest関数が no undeclared variables と判定されるため、テストファイルのみ設定を上書き
+  "overrides": [
+    {
+      "include": ["*.test.ts", "*.test.tsx", "*.spec.ts", "*.spec.tsx", "**/__tests__/**"],
+      "javascript": {
+        "globals": ["afterAll", "afterEach", "beforeAll", "beforeEach", "describe", "expect", "it", "jest", "test"]
+      }
+    }
+  ]
+}
